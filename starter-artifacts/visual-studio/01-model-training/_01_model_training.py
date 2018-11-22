@@ -1,99 +1,33 @@
-﻿import numpy as np
+﻿# Step 1 - load the data
+########################
+import numpy as np
 import pandas as pd
 import os
 
-
-# MAGIC %md
-# MAGIC Creating a simple baseline model (the parsimonious model)
-
-# COMMAND ----------
-
-# MAGIC %md ###Creating a simple baseline model (the parsimonious model)
-
-# COMMAND ----------
-
-# MAGIC %md Load the clean version of the data.
-# MAGIC 
-
-# COMMAND ----------
-
 print("Current working directory is ", os.path.abspath(os.path.curdir))
-df = pd.read_csv('UsedCars_Clean.csv', delimiter=',')
+df = pd.read_csv('./data/UsedCars_Clean.csv', delimiter=',')
 print(df)
 
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC In this section we will train a parsimonious model, a basic model to get a sense of the predictive capability of our data. 
-# MAGIC 
-# MAGIC We are going to try and build a model that can answer the question "Can I afford a car that is X months old and has Y kilometers on it, given I have $12,000 to spend?"
-# MAGIC 
-# MAGIC The model will respond with a 1 (Yes) or no 0 (No). 
-# MAGIC 
-# MAGIC In order to train a classifier, we need labels that go along with our used car features. The only features our model will be trained with are Age and KM. 
-# MAGIC 
-# MAGIC We will engineer the label for Affordable. Our logic will be simple, if the car costs less than $12,000 (our stated budget), then we will label that row in our data with a 1, meaning Yes it is affordable. Otherwise we will label it with a 0.
-# MAGIC 
-# MAGIC The following cell will create a new DataFrame that has our two desired features and the engineered label.
-
-# COMMAND ----------
-
+# Step 2 - add the affordable feature
+######################################
 df['Affordable'] = np.where(df['Price']<12000, 1, 0)
 df_affordability = df[["Age","KM", "Affordable"]]
 print(df_affordability)
 
-# COMMAND ----------
-
-# MAGIC %md **Training the classifier**
-# MAGIC 
-# MAGIC In this particular case, we have chosen to train our classifier using the LogisticRegression module from SciKit Learn, since it's a good starting point for a model, especially when our data is not too large. 
-# MAGIC 
-# MAGIC The LogisticRegression module does not understand Spark DataFrames natively. Given our small dataset, one option is to collect the data on to the driver node and then process represent using arrays. The following converts our Spark DataFrame into a Pandas DataFrame. Then the features (Age and KM) are stored in the X array and the labels (Affordability are stored in the y array).
-
-# COMMAND ----------
-
-
+# Step 3 - Scale the numeric feature values
+###########################################
 X = df_affordability[["Age", "KM"]].values
 y = df_affordability[["Affordable"]].values
-
-
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC Now one challenge we will face with the LogisticRegression is that it expects the inputs to be normalized. To make a long story short, if we were just to train the model using KM and Age without normalizing them to a smaller range around 0, then the model would give undue importance to the KM values because they are simply so much larger than the age (e.g., consider 80 months and 100,000 KM). 
-# MAGIC 
-# MAGIC To normalize the values, we use the StandardScaler, again from SciKit-Learn.
-
-# COMMAND ----------
 
 from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC In the next line we look at the result of scaling. The first table of output shows the statistics for the original values. The second table shows the stats for the scaled values. Column 0 is Age and column 1 is KM. 
-
-# COMMAND ----------
-
 print(pd.DataFrame(X).describe().round(2))
 print(pd.DataFrame(X_scaled).describe().round(2))
 
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC **Challenge 2**
-# MAGIC 
-# MAGIC After scaling, what is the range of values possible for the KM feature?
-
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC Next we will train the model. 
-
-# COMMAND ----------
-
+# Step 4 - Fit a Logistic Regression
+####################################
 from sklearn import linear_model
 # Create a linear model for Logistic Regression
 clf = linear_model.LogisticRegression(C=1)
@@ -102,53 +36,30 @@ clf = linear_model.LogisticRegression(C=1)
 clf.fit(X_scaled, y)
 
 
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC Now run the following cell. It will take as input the values you specified in the widgets, scale the values and then use our classifier to predict the affordability. 
-
-# COMMAND ----------
-
+# Step 5 - Test the trained model's prediction
+##############################################
 age = 60
 km = 40000
 
 scaled_input = scaler.transform([[age, km]])
-  
 prediction = clf.predict(scaled_input)
 
 print("Can I afford a car that is {} month(s) old with {} KM's on it?".format(age,km))
 print("Yes (1)" if prediction[0] == 1 else "No (0)")
 
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC Experiment with changing the values for Age and Distance Driven by editing the values in the widgets. Notice that every time you edit a value and exit the input field, the above cell is re-executed (HINT: Look at the timestamp output that appears at the bottom of the above cell).
-
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC The above approach let's us experiment one prediction at a time. But what if we want to score a list of inputs at once? The following cell shows how we could score all of our original features to see what our model would predict.
-
-# COMMAND ----------
-
+# Step 6 - Measure the model's performance
+##########################################
 scaled_inputs = scaler.transform(X)
 predictions = clf.predict(scaled_inputs)
 print(predictions)
-
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC Now we can "grade" our model's performance using the accuracy measure. To do this we are effectively comparing what the model predicted versus what the label actually was for each row in our data. 
-# MAGIC 
-# MAGIC An easy way to do this is by using the `accuracy_score` method from SciKit-Learn. 
-
-# COMMAND ----------
 
 from sklearn.metrics import accuracy_score
 score = accuracy_score(y, predictions)
 print("Model Accuracy: {}".format(score.round(3)))
 
-# Now experiment with different training subsets
+
+# Step 7 - Define a method to experiment with different training subset sizes
+#############################################################################
 from sklearn.model_selection import train_test_split
 full_X = df_affordability[["Age", "KM"]]
 full_Y = df_affordability[["Affordable"]]
@@ -167,14 +78,14 @@ def train_eval_model(full_X, full_Y,training_set_percentage):
 
     return (clf, score)
 
-# Verify AML SDK Installed
+# Step 8 - Verify AML SDK Installed
 #####################################################################
 import azureml.core
 print("SDK Version:", azureml.core.VERSION)
 
 
 
-# Create a workspace
+# Step 9 - Create a workspace
 #####################################################################
 
 #Provide the Subscription ID of your existing Azure subscription
@@ -195,19 +106,19 @@ ws = Workspace.create(
     name = workspace_name,
     subscription_id = subscription_id,
     resource_group = resource_group, 
-    location = workspace_region)
+    location = workspace_region,
+    exist_ok = True)
 
 print("Workspace Provisioning complete.")
 
 
-# Create an experiment and log metrics for multiple training runs
-#####################################################################
-
+# Step 10 - Create an experiment and log metrics for multiple training runs
+###########################################################################
 from azureml.core.run import Run
 from azureml.core.experiment import Experiment
 
 # start a training run by defining an experiment
-myexperiment = Experiment(ws, "UsedCars_Experiment_02")
+myexperiment = Experiment(ws, "UsedCars_Experiment")
 root_run = myexperiment.start_logging()
 
 training_set_percentage = 0.25
@@ -225,9 +136,6 @@ print("With %0.2f percent of data, model accuracy reached %0.4f." % (training_se
 run.log("Training_Set_Percentage", training_set_percentage)
 run.log("Accuracy", score)
 run.complete()
-
-# Go to the Azure Portal, find your Azure Machine Learning Workspace, select Experiments and select the UsedCars_Experiment
-# Confirm you have two runs with a status of running
 
 training_set_percentage = 0.75
 run = root_run.child_run("Training_Set_Percentage-%0.5F" % training_set_percentage)
@@ -248,6 +156,8 @@ run.complete()
 # Close out the experiment
 root_run.complete()
 
+# Step 11 - Review captured runs
+################################
 # Go to the Azure Portal, find your Azure Machine Learning Workspace, select Experiments and select the UsedCars_Experiment
 
 # You can also query the run history using the SDK.
@@ -255,10 +165,8 @@ root_run.complete()
 runs = [r for r in root_run.get_children()]
 print(runs)
 
-# Submit an experiment to Azure Batch AI and log metrics for multiple training runs
-###################################################################################
-
-
+# Step 12 - Create an Azure Batch AI cluster
+#############################################################################################
 ws = Workspace.get(name=workspace_name, subscription_id=subscription_id,resource_group=resource_group)
 print(ws.name, ws.location, ws.resource_group, ws.location, sep = '\t')
 
@@ -279,7 +187,7 @@ vm_size = "STANDARD_DS11_V2"
 autoscale_enabled = True
 
 
-if batchai_cluster_name in ws.compute_targets():
+if batchai_cluster_name in ws.compute_targets:
     compute_target = ws.compute_targets[batchai_cluster_name]
     if compute_target and type(compute_target) is BatchAiCompute:
         print('Found existing compute target, using this compute target instead of creating:  ' + batchai_cluster_name)
@@ -302,21 +210,10 @@ else:
     print(compute_target.status.serialize())
 
 
-# Expected output:
-# Creating a new compute target...
-# Creating
-# succeeded.....
-# BatchAI wait for completion finished
-# Minimum number of nodes requested have been provisioned
-# {'allocationState': 'steady', 'allocationStateTransitionTime': '2018-11-17T17:56:07.361000+00:00', 'creationTime': '2018-11-17T17:52:53.601000+00:00', 'currentNodeCount': 1, 'errors': None, 'nodeStateCounts': {'idleNodeCount': 0, 'leavingNodeCount': 0, 'preparingNodeCount': 1, 'runningNodeCount': 0, 'unusableNodeCount': 0}, 'provisioningState': 'succeeded', 'provisioningStateTransitionTime': '2018-11-17T17:53:59.653000+00:00', 'scaleSettings': {'manual': None, 'autoScale': {'maximumNodeCount': 3, 'minimumNodeCount': 1, 'initialNodeCount': 1}}, 'vmPriority': 'lowpriority', 'vmSize': 'STANDARD_DS11_V2'}
-
-
-# Upload the dataset to the DataStore
-######################################
-
+# Step 13 - Upload the dataset to the DataStore
+###############################################
 ds = ws.get_default_datastore()
 print(ds.datastore_type, ds.account_name, ds.container_name)
-
 ds.upload(src_dir='./data', target_path='used_cars', overwrite=True, show_progress=True)
 
 
@@ -325,8 +222,8 @@ ds.upload(src_dir='./data', target_path='used_cars', overwrite=True, show_progre
 ################################
 
 
-# Create estimator
-#####################
+# Step 14 - Create estimator
+#############################
 from azureml.train.estimator import Estimator
 
 script_params = {
@@ -334,22 +231,16 @@ script_params = {
     '--training-set-percentage': 0.3
 }
 
-est_config = Estimator(source_directory='C:\\Users\\student\\source\\repos\\01-model-training\\01-model-training\\training',
+est_config = Estimator(source_directory='training',
                 script_params=script_params,
                 compute_target=compute_target,
                 entry_script='train.py',
                 conda_packages=['scikit-learn','pandas'])
 
-# Execute the job
-#################
+# Step 15 - Execute the estimator job
+#####################################
 run = exp.submit(config=est_config)
 run
-
-# Expected output:
-# Run(Experiment: UsedCars_ManagedCompute_01,
-# Id: UsedCars_ManagedCompute_01_1542479348250,
-# Type: azureml.scriptrun,
-# Status: Starting)
 
 # Poll for job status
 run.wait_for_completion(show_output=True) # value of True will display a verbose, streaming log
