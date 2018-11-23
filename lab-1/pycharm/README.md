@@ -12,7 +12,7 @@ If you have not cloned this repository to your working environment, do so now. A
 3. In the Project tool window expand the folder `01-model-training`.
 4. Expand the `data` folder. This folder contains two CSV files. `UsedCars_Clean.csv` represents the unlabeled data and `UsedCars_Affordability.csv` contains the complete data set with labels (Affordable is 1 for affordable, 0 for not affordable).
 5. Expand `training`. This folder contains train.py which will be used later in the lab to train the model using a remote cluster provided by Azure Batch AI.
-6. Open `01-model-training.py`. This is the Python file you will step thru executing in this lab. Leave it open and continue to the next exercise.
+6. Open `01_model_training.py`. This is the Python file you will step thru executing in this lab. Leave it open and continue to the next exercise.
 
 
 ## Exercise 2 - Train a simple model locally
