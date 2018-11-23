@@ -24,8 +24,6 @@ print('Path to CSV file dataset:' + data_csv_path)
 
 # Load the data
 df_affordability = pd.read_csv(data_csv_path)
-
-# Now experiment with different training subsets
 full_X = df_affordability[["Age", "KM"]]
 full_Y = df_affordability[["Affordable"]]
 
