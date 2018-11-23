@@ -45,7 +45,7 @@ The quickest way to get going with the labs is to deploy the Deep Learning Virtu
  6. Upgrade the installed version of the Azure Machine Learning SDK by running the following command:
     - `pip install --upgrade azureml-sdk[notebooks,automl] azureml-dataprep`
 7. If you will be using Visual Studio for the labs, launch `Visual Studio 2017` from the Start menu and login with your Microsoft Account. Allow Visual Studio a few moments to get ready. Once you see the Tools for AI Start Page displayed in Visual Studio, the setup is complete.
-8. If you will be using PyCharm for the labs, launch `JetBrains PyCharm Community Edition` from the Start menu. Make your intial default selections and once you are at the Welcome to PyCharm new project dialog the setup is complete.
+8. If you will be using PyCharm for the labs, launch `JetBrains PyCharm Community Edition` from the Start menu. On the Complete Installation dialog, leave `Do not import settings` selected, accept the license agreement and choose an option for Data Sharing. On the Customize PyCharm screen, select `Skip Remaining and Set Defaults`. Once you are at the Welcome to PyCharm new project dialog the setup is complete.
 9. Your Virtual Machine is now ready to support any of the labs using either the Visual Studio or PyCharm environments.     
 
 
