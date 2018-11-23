@@ -1,4 +1,6 @@
-﻿import os
+﻿# Step 1 - Load training data and prepare Workspace
+###################################################
+import os
 import numpy as np
 import pandas as pd
 from sklearn import linear_model 
@@ -11,16 +13,15 @@ from azureml.core import Run
 from azureml.core import Workspace
 from azureml.core.run import Run
 from azureml.core.experiment import Experiment
+from azureml.train.automl import AutoMLConfig
 import pickle
 
 # Verify AML SDK Installed
-#####################################################################
 # view version history at https://pypi.org/project/azureml-sdk/#history 
 print("SDK Version:", azureml.core.VERSION)
 
 
 # Load our training data set
-###############################
 print("Current working directory is ", os.path.abspath(os.path.curdir))
 df_affordability = pd.read_csv('data/UsedCars_Affordability.csv', delimiter=',')
 print(df_affordability)
@@ -28,9 +29,7 @@ print(df_affordability)
 full_X = df_affordability[["Age", "KM"]]
 full_Y = df_affordability[["Affordable"]]
 
-# Create a workspace
-#####################################################################
-
+# Create a Workspace
 #Provide the Subscription ID of your existing Azure subscription
 subscription_id = "e223f1b3-d19b-4cfa-98e9-bc9be62717bc"
 
@@ -51,8 +50,8 @@ print("Workspace Provisioning complete.")
 
 
 
-# Define a helper method that will train, score and register the classifier using different settings
-###########################################################################################
+# Step 2 - Define a helper method that will use AutoML to train multiple models and pick the best one
+##################################################################################################### 
 def auto_train_model(ws, experiment_name, model_name, full_X, full_Y,training_set_percentage, training_target_accuracy):
 
     # start a training run by defining an experiment
@@ -60,10 +59,7 @@ def auto_train_model(ws, experiment_name, model_name, full_X, full_Y,training_se
     
     train_X, test_X, train_Y, test_Y = train_test_split(full_X, full_Y, train_size=training_set_percentage, random_state=42)
 
-    #scaler = StandardScaler()
-    #train_X_scaled = scaler.fit_transform(train_X)
     train_Y_array = train_Y.values.flatten()
-    # scaled_inputs = scaler.transform(test_X)
 
     # Configure the automated ML job
     # The model training is configured to run on the local machine
@@ -89,10 +85,8 @@ def auto_train_model(ws, experiment_name, model_name, full_X, full_Y,training_se
     return (best_model, run, best_run)
 
 
-# Use AutoML to train multiple models and pick the best one
-#####################################################################
-from azureml.train.automl import AutoMLConfig
-
+# Step 3 - Execute the AutoML driven training
+#############################################
 experiment_name = "Experiment-AutoML-04"
 model_name = "usedcarsmodel"
 training_set_percentage = 0.50
@@ -103,12 +97,13 @@ best_model, run, best_run = auto_train_model(ws, experiment_name, model_name, fu
 import pprint
 pprint.pprint({k: v for k, v in best_run.get_metrics().items() if isinstance(v, float)})
 
-# Try the model
+# Step 4 - Try the best model
+#############################
 age = 60
 km = 40000
 print(best_model.predict( [[age,km]] ))
 
-# Register the best performing model for later use and deployment
+# Step 5 - Register the best performing model for later use and deployment
 #################################################################
 # notice the use of the root run (not best_run) to register the best model
 run.register_model(description='AutoML trained used cars classifier')

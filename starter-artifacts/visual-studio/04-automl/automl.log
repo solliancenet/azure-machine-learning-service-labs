@@ -7178,3 +7178,87 @@
 2018-11-21 17:55:18,425 - INFO - 534 : Stopping criteria reached at iteration 0. Ending experiment.
 2018-11-21 17:55:18,425 - INFO - 534 : Stopping criteria reached at iteration 0. Ending experiment.
 2018-11-21 17:55:18,425 - INFO - 534 : Stopping criteria reached at iteration 0. Ending experiment.
+2018-11-23 19:16:03,786 - INFO - 126 : Starting usage telemetry collection
+2018-11-23 19:16:03,835 - INFO - 364 : Extracting user Data
+2018-11-23 19:16:03,836 - INFO - 398 : Start creating parent run with DTO: {'additional_properties': {}, 'num_iterations': 20, 'training_type': None, 'acquisition_function': None, 'metrics': ['accuracy'], 'primary_metric': 'accuracy', 'train_split': 0.0, 'max_time_seconds': 12000, 'acquisition_parameter': 0.0, 'num_cross_validation': 3, 'target': 'local', 'raw_aml_settings_string': "{'name': 'Experiment-AutoML-04', 'path': '.\\\\outputs', 'subscription_id': 'e223f1b3-d19b-4cfa-98e9-bc9be62717bc', 'resource_group': 'aml-workspace-z', 'workspace_name': 'aml-workspace-z', 'iterations': 20, 'primary_metric': 'accuracy', 'data_script': None, 'compute_target': 'local', 'task_type': 'classification', 'validation_size': 0.0, 'n_cross_validations': 3, 'y_min': None, 'y_max': None, 'num_classes': 2, 'preprocess': False, 'lag_length': 0, 'is_timeseries': False, 'max_cores_per_iteration': 1, 'max_concurrent_iterations': 1, 'iteration_timeout_minutes': 200, 'mem_in_mb': None, 'enforce_time_on_windows': True, 'experiment_timeout_minutes': None, 'experiment_exit_score': 0.93, 'whitelist_models': None, 'blacklist_algos': ['kNN', 'LinearSVM'], 'auto_blacklist': True, 'blacklist_samples_reached': False, 'exclude_nan_labels': True, 'verbosity': 20, 'debug_log': 'automl.log', 'show_warnings': False, 'model_explainability': False, 'service_url': None, 'sdk_url': None, 'sdk_packages': None, 'telemetry_verbosity': 'NOTSET', 'send_telemetry': False, 'spark_service': None, 'metrics': None, 'enable_ensembling': True, 'ensemble_iterations': 10, 'enable_tf': False, 'enable_cache': False, 'enable_subsampling': False, 'subsample_seed': None, 'cost_mode': 0, 'metric_operation': 'maximize'}", 'aml_settings_json_string': '{"name": "Experiment-AutoML-04", "path": ".\\\\outputs", "subscription_id": "e223f1b3-d19b-4cfa-98e9-bc9be62717bc", "resource_group": "aml-workspace-z", "workspace_name": "aml-workspace-z", "iterations": 20, "primary_metric": "accuracy", "data_script": null, "compute_target": "local", "task_type": "classification", "validation_size": 0.0, "n_cross_validations": 3, "y_min": null, "y_max": null, "num_classes": 2, "preprocess": false, "lag_length": 0, "is_timeseries": false, "max_cores_per_iteration": 1, "max_concurrent_iterations": 1, "iteration_timeout_minutes": 200, "mem_in_mb": null, "enforce_time_on_windows": true, "experiment_timeout_minutes": null, "experiment_exit_score": 0.93, "whitelist_models": null, "blacklist_algos": ["kNN", "LinearSVM"], "auto_blacklist": true, "blacklist_samples_reached": false, "exclude_nan_labels": true, "verbosity": 20, "debug_log": "automl.log", "show_warnings": false, "model_explainability": false, "service_url": null, "sdk_url": null, "sdk_packages": null, "telemetry_verbosity": "NOTSET", "send_telemetry": false, "spark_service": null, "metrics": null, "enable_ensembling": true, "ensemble_iterations": 10, "enable_tf": false, "enable_cache": false, "enable_subsampling": false, "subsample_seed": null, "cost_mode": 0, "metric_operation": "maximize"}', 'data_prep_json_string': None, 'enable_subsampling': False}.
+2018-11-23 19:16:05,190 - INFO - 417 : [ParentRunID:AutoML_7331ddf0-2d0f-457d-b21f-3e1b4b90967d] Local run using input X and y.
+2018-11-23 19:16:05,191 - INFO - 422 : [ParentRunId:AutoML_7331ddf0-2d0f-457d-b21f-3e1b4b90967d]SDK dependencies versions:{"azureml-widgets": "0.1.80", "azureml-train": "0.1.80", "azureml-train-widgets": "0.1.59", "azureml-train-restclients-hyperdrive": "0.1.80", "azureml-train-core": "0.1.80", "azureml-train-automl": "0.1.80", "azureml-telemetry": "0.1.80", "azureml-sdk": "0.1.80", "azureml-pipeline": "0.1.80", "azureml-pipeline-steps": "0.1.80", "azureml-pipeline-core": "0.1.80", "azureml-dataprep": "0.5.1", "azureml-dataprep-native": "11.1.1", "azureml-core": "0.1.80", "azureml-contrib-tensorboard": "0.1.59", "azureml-contrib-server": "0.1.59", "azureml-contrib-run": "0.1.59", "azureml-contrib-explain-model": "0.1.59", "azureml-contrib-brainwave": "0.1.59"}.
+2018-11-23 19:16:05,373 - INFO - 428 : Parent Run ID: AutoML_7331ddf0-2d0f-457d-b21f-3e1b4b90967d
+2018-11-23 19:16:05,373 - INFO - 890 : [ParentRunId:AutoML_7331ddf0-2d0f-457d-b21f-3e1b4b90967d]Input X datatype is <class 'numpy.ndarray'>, shape is (718, 2), datasize is 112.
+2018-11-23 19:16:05,373 - INFO - 890 : [ParentRunId:AutoML_7331ddf0-2d0f-457d-b21f-3e1b4b90967d]Input y datatype is <class 'numpy.ndarray'>, shape is (718,), datasize is 5840.
+2018-11-23 19:16:05,374 - INFO - 40 : Pre-processing user data
+2018-11-23 19:16:05,378 - INFO - 659 : [YCol]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "2", "total_number_vals": "718", "lengths": "{}", "num_unique_lens": "1", "column_type": "\"integer\"", "average_entry_length": "1.0", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.002785515320334262"}
+2018-11-23 19:16:05,381 - INFO - 659 : [XColNum:0]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "72", "total_number_vals": "718", "lengths": "{}", "num_unique_lens": "2", "column_type": "\"integer\"", "average_entry_length": "1.9832869080779945", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.10027855153203342"}
+2018-11-23 19:16:05,385 - INFO - 659 : [XColNum:1]RawFeatureStats:{"date_regex1": "{}", "date_regex2": "{}", "num_unique_vals": "661", "total_number_vals": "718", "lengths": "{}", "num_unique_lens": "5", "column_type": "\"integer\"", "average_entry_length": "5.157381615598886", "average_number_spaces": "0.0", "num_na": "{}", "is_datetime": "false", "cardinality_ratio": "0.9206128133704735"}
+2018-11-23 19:16:05,385 - INFO - 107 : No preprocessing of data to be done here
+2018-11-23 19:16:05,385 - INFO - 348 : Creating cross validations
+2018-11-23 19:16:05,386 - INFO - 362 : Found cross validation type: KFoldCrossValitionSplit
+2018-11-23 19:16:06,324 - INFO - 525 : Start local loop.
+2018-11-23 19:16:06,325 - INFO - 529 : Start iteration: 0
+2018-11-23 19:16:06,325 - INFO - 568 : Querying Jasmine for next pipeline.
+2018-11-23 19:16:07,190 - INFO - 583 : Received pipeline: {"objects": [{"prepared_kwargs": {}, "spec_class": "preproc", "param_args": [], "param_kwargs": {"with_std": true, "with_mean": false}, "class_name": "StandardScaler", "module": "sklearn.preprocessing"}, {"prepared_kwargs": {}, "spec_class": "sklearn", "param_args": [], "param_kwargs": {"n_neighbors": 13, "metric": "minkowski", "weights": "distance"}, "class_name": "KNeighborsClassifier", "module": "sklearn.neighbors"}], "pipeline_id": "01f48da4c326b0bc066b30c116185fd5a8955389"}
+2018-11-23 19:16:07,514 - WARNING - 97 : psutil not found, skipping logging cpu and memory
+2018-11-23 19:16:07,514 - INFO - 100 : [RunId:AutoML_7331ddf0-2d0f-457d-b21f-3e1b4b90967d_0]Platform information: Windows-10-10.0.14393-SP0.
+2018-11-23 19:16:07,514 - INFO - 281 : ['Age' 'KM']
+2018-11-23 19:16:07,514 - INFO - 318 : [ParentRunId:AutoML_7331ddf0-2d0f-457d-b21f-3e1b4b90967d_0] X datatype is <class 'numpy.ndarray'>, shape is (718, 2), datasize is 112.
+2018-11-23 19:16:07,515 - INFO - 323 : [ParentRunId:AutoML_7331ddf0-2d0f-457d-b21f-3e1b4b90967d_0] y datatype is <class 'numpy.ndarray'>, shape is (718,), datasize is 5840.
+2018-11-23 19:16:07,515 - INFO - 343 : Created child run AutoML_7331ddf0-2d0f-457d-b21f-3e1b4b90967d_0
+2018-11-23 19:16:07,515 - INFO - 436 : Start executing pipeline {"objects": [{"prepared_kwargs": {}, "spec_class": "preproc", "param_args": [], "param_kwargs": {"with_std": true, "with_mean": false}, "class_name": "StandardScaler", "module": "sklearn.preprocessing"}, {"prepared_kwargs": {}, "spec_class": "sklearn", "param_args": [], "param_kwargs": {"n_neighbors": 13, "metric": "minkowski", "weights": "distance"}, "class_name": "KNeighborsClassifier", "module": "sklearn.neighbors"}], "pipeline_id": "01f48da4c326b0bc066b30c116185fd5a8955389"}.
+2018-11-23 19:16:07,515 - INFO - 438 : Running with the following AutoML settings:
+ - name: Experiment-AutoML-04
+ - path: .\outputs
+ - subscription_id: e223f1b3-d19b-4cfa-98e9-bc9be62717bc
+ - resource_group: aml-workspace-z
+ - workspace_name: aml-workspace-z
+ - iterations: 20
+ - primary_metric: accuracy
+ - data_script: None
+ - compute_target: local
+ - task_type: classification
+ - validation_size: 0.0
+ - n_cross_validations: 3
+ - y_min: None
+ - y_max: None
+ - num_classes: 2
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 200
+ - mem_in_mb: None
+ - enforce_time_on_windows: True
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: 0.93
+ - whitelist_models: None
+ - blacklist_algos: ['kNN', 'LinearSVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: False
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - debug_log: automl.log
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - spark_context: None
+ - telemetry_verbosity: NOTSET
+ - send_telemetry: False
+ - spark_service: None
+ - metrics: None
+ - enable_ensembling: True
+ - ensemble_iterations: 10
+ - enable_tf: False
+ - enable_cache: False
+ - enable_subsampling: False
+ - subsample_seed: None
+ - cost_mode: 0
+ - metric_operation: maximize
+2018-11-23 19:16:10,465 - INFO - 564 : Pipeline execution finished with a score of 0.9387494188749419
+2018-11-23 19:16:10,466 - INFO - 613 : Start logging metrics for child run.
+2018-11-23 19:16:11,745 - INFO - 1190 : The following metrics have been logged for the child run: {'AUC_micro': 0.9684345902786315, 'AUC_macro': 0.9684345902786315, 'AUC_weighted': 0.9684345902786315, 'accuracy': 0.9387494188749419, 'weighted_accuracy': 0.9635993950946903, 'norm_macro_recall': 0.7739909670801484, 'balanced_accuracy': 0.8869954835400741, 'log_loss': 0.3149414073434263, 'f1_score_micro': 0.9387494188749419, 'f1_score_macro': 0.9024329049250029, 'f1_score_weighted': 0.9373955488052862, 'precision_score_macro': 0.9209147723141714, 'precision_score_micro': 0.9387494188749419, 'precision_score_weighted': 0.9376006139940539, 'recall_score_macro': 0.8869954835400741, 'recall_score_micro': 0.9387494188749419, 'recall_score_weighted': 0.9387494188749419, 'average_precision_score_macro': 0.9868041720856932, 'average_precision_score_micro': 0.9868041720856932, 'average_precision_score_weighted': 0.9868041720856932, 'confusion_matrices': <class 'dict'>, 'precision_recall': <class 'dict'>, 'roc': <class 'dict'>, 'accuracy_table': <class 'dict'>, 'confusion_matrix': <class 'dict'>}.
+2018-11-23 19:16:13,676 - INFO - 529 : Start iteration: 1
+2018-11-23 19:16:13,677 - INFO - 534 : Stopping criteria reached at iteration 0. Ending experiment.
+2018-11-23 19:16:13,977 - INFO - 72 : memory usage 213,404 K
+2018-11-23 19:16:13,978 - INFO - 83 : cpu time 0:00:05
