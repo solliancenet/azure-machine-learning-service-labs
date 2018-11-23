@@ -8,7 +8,7 @@ If you have not cloned this repository to your working environment, do so now. A
 ## Exercise 1 - Get oriented to the lab files
 1. Within PyCharm, select open Existing Project and navigate to the directory where you cloned the repo to open the project `azure-ml-labs`. 
 2. In the Project window, expand External Libraries. You should see one environment called `<Python 3.6>` where the path points to your AzureML Anaconda environment. This Anaconda environment will be used when you execute code.
-3. In the Project tool window expand the folder `02-model-training`.
+3. In the Project tool window expand the folder `03-model-deployment`.
 4. Expand the `data` folder. This folder contains the CSV file `UsedCars_Affordability.csv` which contains the complete data set with labels (Affordable is 1 for affordable, 0 for not affordable).
 5. Open `03_model_deployment.py`. This is the Python file you will step thru executing in this lab. Leave it open and continue to the next exercise.
 
