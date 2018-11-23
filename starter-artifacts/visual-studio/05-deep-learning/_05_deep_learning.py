@@ -1,13 +1,18 @@
-﻿
+﻿# Step 1 - Train an autoencoder using GPU
+#########################################
 import numpy as np
-# We use Keras framework to build Neural networks
 import keras
 from keras import backend as K
-
 from keras.layers import Input, Dense, Conv2D, MaxPooling2D, UpSampling2D
 from keras.models import Model
 from keras.utils.vis_utils import plot_model
-
+import azureml
+from azureml.core import Run
+from azureml.core import Workspace
+from azureml.core.run import Run
+from azureml.core.experiment import Experiment
+from azureml.core.model import Model 
+import pickle
 
 # Verify we have a GPU available
 # The output of the following should not be an empty array
@@ -33,7 +38,6 @@ x = Conv2D(8, (3, 3), activation='relu', padding='same')(x)
 encoded_feature_vector = MaxPooling2D((2, 2), padding='same', name='feature_vector')(x) #  <---- name your feature vector somehow
 
 # at this point the representation is (4, 4, 8) i.e. 128-dimensional compressed feature vector
-
 
 # Build the decoder
 x = Conv2D(8, (3, 3), activation='relu', padding='same')(encoded_feature_vector)
@@ -69,12 +73,42 @@ x_test = np.reshape(x_test, (len(x_test), 28, 28, 1))
 print("Train dataset size is {0}".format(x_train.shape))
 print("Test dataset size is {0}".format(x_test.shape))
 
-
+# Step 2 - Train a neural network
+#################################
 # It takes several minutes to train this neural network, depending on the configuration of your cluster.
 learning_history=autoencoder_model.fit(x=x_train, y=x_train, epochs=10, batch_size=128, 
                                  shuffle=True, validation_data=(x_test, x_test), verbose=1)
 
-
-# Test the model
+# Step 3 - Test the model
+##########################
 encoded_decoded_image=autoencoder_model.predict(x_test)
 
+
+# Step 4 - Export and Register the model
+########################################
+#Provide the Subscription ID of your existing Azure subscription
+subscription_id = "e223f1b3-d19b-4cfa-98e9-bc9be62717bc"
+
+#Provide values for the Resource Group and Workspace that will be created
+resource_group = "aml-workspace-z"
+workspace_name = "aml-workspace-z"
+workspace_region = 'westcentralus' # eastus, westcentralus, southeastasia, australiaeast, westeurope
+
+# By using the exist_ok param, if the worskpace already exists we get a reference to the existing workspace instead of an error
+ws = Workspace.create(
+    name = workspace_name,
+    subscription_id = subscription_id,
+    resource_group = resource_group, 
+    location = workspace_region,
+    exist_ok = True)
+
+print("Workspace Provisioning complete.")
+
+# Serialize the model to a pickle file in the outputs folder
+model_name = 'autoencoder'
+output_model_path = 'outputs/' + model_name + '.pkl'
+pickle.dump(learning_history,open(output_model_path,'wb'))
+print('Exported model to ', output_model_path)
+
+# notice for the model_path, we supply the name of the outputs folder without a trailing slash
+registered_model = Model.register(model_path='outputs', model_name=model_name, workspace=ws)
