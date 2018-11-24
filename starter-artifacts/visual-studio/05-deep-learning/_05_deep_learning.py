@@ -11,7 +11,7 @@ from azureml.core import Run
 from azureml.core import Workspace
 from azureml.core.run import Run
 from azureml.core.experiment import Experiment
-from azureml.core.model import Model 
+from azureml.core.model import Model as AMLModel
 import pickle
 
 # Verify we have a GPU available
@@ -111,4 +111,4 @@ pickle.dump(learning_history,open(output_model_path,'wb'))
 print('Exported model to ', output_model_path)
 
 # notice for the model_path, we supply the name of the outputs folder without a trailing slash
-registered_model = Model.register(model_path='outputs', model_name=model_name, workspace=ws)
+registered_model = AMLModel.register(model_path='outputs', model_name=model_name, workspace=ws)
