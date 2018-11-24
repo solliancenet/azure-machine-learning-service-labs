@@ -1,4 +1,4 @@
-# Lab 2 - Training a Machine Learning Model using Azure Machine Learning service
+# Lab 2 - Using Azure Machine Learning service Model Versioning and Run History
 
 In this lab you will use the capabilities of the Azure Machine Learning service to collect model performance metrics and to capture model version, as well as query the experimentation run history to retrieve captured metrics. 
 
@@ -17,7 +17,7 @@ If you have not cloned this repository to your working environment, do so now. A
 ## Exercise 2 - Train a simple model locally
 This lab builds upon the lessons learned in the previous lab, but is self contained so you work thru this lab without having to run a previous lab. As such Steps 1, 2 and 3 in the lab are not explored in detail as their goal is to setup a few experiment runs, which was covered in detail in Lab 1.
 1. Read thru and select the code starting with # Step 1 all the way down to but NOT including # Step 2. Use `Alt + Shift + Enter` to execute the selected code in the Python Immediate Window. Take a moment to look at the data loaded into the Pandas Dataframe - it contains data about used cars such as the price (in dollars), age (in years), KM (kilometers driven) and other attributes like weather it is automatic transimission, the number of doors, and the weight.
-2. In Step 2, we will define a help method that locally trains, evaluates and then registers the trained model with Azure Machine Learning. Select and execute Step #2.
+2. In Step 2, we will define a helper method that locally trains, evaluates and then registers the trained model with Azure Machine Learning. Select and execute Step #2.
 3. In Step 3, we retrieve an existing Azure Machine Learning Workspace (or create a new one if desired). In this step, be sure to set the values for `subscription_id`, `resource_group`, `workspace_name` and `workspace_region` as directed by the comments. With the Workspace retrieved, we will train 3 different models using different subsets of the training data. Select and execute Step #3.
 
 
