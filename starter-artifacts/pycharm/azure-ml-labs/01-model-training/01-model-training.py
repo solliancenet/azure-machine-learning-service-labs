@@ -169,13 +169,12 @@ print(runs)
 
 # Step 12 - Create an Azure Batch AI cluster
 #############################################################################################
-ws = Workspace.get(name=workspace_name, subscription_id=subscription_id, resource_group=resource_group)
-print(ws.name, ws.location, ws.resource_group, ws.location, sep='\t')
+ws = Workspace.get(name=workspace_name, subscription_id=subscription_id,resource_group=resource_group)
+print(ws.name, ws.location, ws.resource_group, ws.location, sep = '\t')
 
 experiment_name = "UsedCars_ManagedCompute_01"
 
 from azureml.core import Experiment
-
 exp = Experiment(workspace=ws, name=experiment_name)
 
 from azureml.core.compute import AmlCompute
@@ -183,33 +182,35 @@ from azureml.core.compute import ComputeTarget
 import os
 
 # choose a name for your cluster
-batchai_cluster_name = "UsedCars-20"
+batchai_cluster_name = "UsedCars-02"
 cluster_min_nodes = 1
 cluster_max_nodes = 3
 vm_size = "STANDARD_DS11_V2"
-autoscale_enabled = True
+
 
 if batchai_cluster_name in ws.compute_targets:
     compute_target = ws.compute_targets[batchai_cluster_name]
     if compute_target and type(compute_target) is AmlCompute:
         print('Found existing compute target, using this compute target instead of creating:  ' + batchai_cluster_name)
+    else:
+        print("Error: A compute target with name ",batchai_cluster_name," was found, but it is not of type AmlCompute.")
 else:
     print('Creating a new compute target...')
-    provisioning_config = AmlCompute.provisioning_configuration(vm_size=vm_size,  # NC6 is GPU-enabled
-                                                                    vm_priority='lowpriority',  # optional
-                                                                    autoscale_enabled=autoscale_enabled,
-                                                                    min_nodes=cluster_min_nodes,
-                                                                    max_nodes=cluster_max_nodes)
+    provisioning_config = AmlCompute.provisioning_configuration(vm_size = vm_size, # NC6 is GPU-enabled
+                                                                min_nodes = cluster_min_nodes, 
+                                                                max_nodes = cluster_max_nodes)
 
     # create the cluster
     compute_target = ComputeTarget.create(ws, batchai_cluster_name, provisioning_config)
-
-    # can poll for a minimum number of nodes and for a specific timeout.
+    
+    # can poll for a minimum number of nodes and for a specific timeout. 
     # if no min node count is provided it will use the scale settings for the cluster
     compute_target.wait_for_completion(show_output=True, min_node_count=None, timeout_in_minutes=20)
-
-    # For a more detailed view of current BatchAI cluster status, use the 'status' property
+    
+     # For a more detailed view of current BatchAI cluster status, use the 'status' property    
     print(compute_target.status.serialize())
+
+
 
 # Step 13 - Upload the dataset to the DataStore
 ###############################################

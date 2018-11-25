@@ -175,7 +175,7 @@ experiment_name = "UsedCars_ManagedCompute_01"
 from azureml.core import Experiment
 exp = Experiment(workspace=ws, name=experiment_name)
 
-from azureml.core.compute import BatchAiCompute
+from azureml.core.compute import AmlCompute
 from azureml.core.compute import ComputeTarget
 import os
 
@@ -184,20 +184,19 @@ batchai_cluster_name = "UsedCars-02"
 cluster_min_nodes = 1
 cluster_max_nodes = 3
 vm_size = "STANDARD_DS11_V2"
-autoscale_enabled = True
 
 
 if batchai_cluster_name in ws.compute_targets:
     compute_target = ws.compute_targets[batchai_cluster_name]
-    if compute_target and type(compute_target) is BatchAiCompute:
+    if compute_target and type(compute_target) is AmlCompute:
         print('Found existing compute target, using this compute target instead of creating:  ' + batchai_cluster_name)
+    else:
+        print("Error: A compute target with name ",batchai_cluster_name," was found, but it is not of type AmlCompute.")
 else:
     print('Creating a new compute target...')
-    provisioning_config = BatchAiCompute.provisioning_configuration(vm_size = vm_size, # NC6 is GPU-enabled
-                                                                vm_priority = 'lowpriority', # optional
-                                                                autoscale_enabled = autoscale_enabled,
-                                                                cluster_min_nodes = cluster_min_nodes, 
-                                                                cluster_max_nodes = cluster_max_nodes)
+    provisioning_config = AmlCompute.provisioning_configuration(vm_size = vm_size, # NC6 is GPU-enabled
+                                                                min_nodes = cluster_min_nodes, 
+                                                                max_nodes = cluster_max_nodes)
 
     # create the cluster
     compute_target = ComputeTarget.create(ws, batchai_cluster_name, provisioning_config)
@@ -208,6 +207,7 @@ else:
     
      # For a more detailed view of current BatchAI cluster status, use the 'status' property    
     print(compute_target.status.serialize())
+
 
 
 # Step 13 - Upload the dataset to the DataStore
