@@ -13,6 +13,8 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "04-automl", "04-automl\04-a
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "05-deep-learning", "05-deep-learning\05-deep-learning.pyproj", "{549C3865-479B-454A-9EA9-1A11500E1D7D}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "06-deploy-to-iot-edge", "06-deploy-to-iot-edge\06-deploy-to-iot-edge.pyproj", "{4CEC97C0-1883-4240-B2E8-6AB72D1D6363}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,8 @@ Global
 		{692E2964-B5B8-4F23-8C78-C1BDF024108C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{549C3865-479B-454A-9EA9-1A11500E1D7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{549C3865-479B-454A-9EA9-1A11500E1D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CEC97C0-1883-4240-B2E8-6AB72D1D6363}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CEC97C0-1883-4240-B2E8-6AB72D1D6363}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
