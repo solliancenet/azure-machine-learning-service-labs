@@ -74,30 +74,51 @@ sudo apt-get install moby-cli
 sudo apt-get update
 sudo apt-get install iotedge
 ```
-5. Open the config.yaml file which contains the IoT Edge configuration in the nano editor. 
+5. Get the IP address of the docker0 interface by running `ifconfig`. The output should be similar to the following. You want the value that follows inet addr (which is 172.17.0.1 in the below example). 
+```
+....
+docker0   Link encap:Ethernet  HWaddr 02:42:30:d8:7f:e9
+          inet addr:172.17.0.1  Bcast:172.17.255.255  Mask:255.255.0.0
+....
+```
+6. Open the config.yaml file which contains the IoT Edge configuration in the nano editor. 
 ```
 sudo nano /etc/iotedge/config.yaml
 ```
-6. Locate the line of code that looks like the following:
+7. Locate the line of code that looks like the following:
 ```
 provisioning:
   source: "manual"
   device_connection_string: "<ADD DEVICE CONNECTION STRING HERE>"
 ```
-7. In the value for `device_connection_string` paste the connection string you acquired from your IoT Hub for your Edge device. Then save and close the file by pressing `CTRL + X`, `Y`, `ENTER`.
-8. Apply the changes by restarting the IoT Edge security daemon.
+8. In the value for `device_connection_string` paste the connection string you acquired from your IoT Hub for your Edge device. 
+9. While in preview, Azure Machine Learning does not support the process identification security feature enabled by default with IoT Edge and you need to perform the following two steps to disable it.
+10. Update the connect section of the configuration with your docker IP address. For example:
+```
+connect:
+  management_uri: "http://172.17.0.1:15580"
+  workload_uri: "http://172.17.0.1:15581"
+```
+11. Enter the same docker IP addresses in the listen section of the configuration. For example:
+```
+listen:
+  management_uri: "http://172.17.0.1:15580"
+  workload_uri: "http://172.17.0.1:15581"
+```
+12. Then save and close the file by pressing `CTRL + X`, `Y`, `ENTER`.
+13. Apply the changes by restarting the IoT Edge security daemon.
 ```
 sudo systemctl restart iotedge
 ```
-9. Verify the status of your IoT Edge service by running (for the Active attribute, the value should read `Active: active(running)`):
+14. Verify the status of your IoT Edge service by running (for the Active attribute, the value should read `Active: active(running)`):
 ```
 sudo systemctl status iotedge
 ```
-10. You can view the list of initial modules (containers) that are runnning on your device by executing:
+15. You can view the list of initial modules (containers) that are runnning on your device by executing:
 ```
 sudo iotedge list
 ```
-11. Your device is now configured and ready to receive cloud-deployed modules. 
+16. Your device is now configured and ready to receive cloud-deployed modules. 
 
 ## Exercise 4 - Prepare the Azure Machine Learning module
 In this exercise you will use a previously trained model using the Azure Machine Learning SDK and deploy it along with a scoring script to an image. This model will score temperature telemetry data for anomalies. In a subsequent exercise, you will deploy this module to your IoT Edge device to perform scoring on the device. 
