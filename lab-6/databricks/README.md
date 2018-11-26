@@ -1,6 +1,6 @@
-# Lab 5 - Deep Learning
+# Lab 6 - Model Deployment to IoT Edge
 
-In this lab you train deep learning models built with Keras and a Tensorflow backend that utilize GPUs with the Azure Machine Learning service.
+In this lab you deploy a trained model container to an IoT Edge device.
 
 ## Exercise 0 - Get the lab files
 If you have not cloned this repository to your working environment, do so now. All of the artifacts for this lab are located under `starter-artifacts/databricks`.
@@ -12,7 +12,7 @@ If you have not cloned this repository to your working environment, do so now. A
 5. Select browse and then navigate to `starter-artifacts/databricks` and select `Azure ML Labs.dbc`
 5. Select Import.
 6. A folder named after the archive should appear. Select that folder.
-7. Navigate into the folder `05 Deep Learning`
+7. Navigate into the folder `06 Deploy to IoT Edge`
 8. The folder will contain one or more notebooks. These are the notebooks you will use in completing this lab. Start with the first notebook and follow the instructions.
 
  
