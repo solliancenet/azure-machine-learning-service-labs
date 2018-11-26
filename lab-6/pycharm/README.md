@@ -1,6 +1,6 @@
-# Lab 5 - Deep Learning
+# Lab 6 - Model Deployment to IoT Edge
 
-In this lab you train deep learning models built with Keras and a Tensorflow backend that utilize GPUs with the Azure Machine Learning service.
+In this lab you deploy a trained model container to an IoT Edge device.
 
 ## Exercise 0 - Get the lab files
 If you have not cloned this repository to your working environment, do so now. All of the artifacts for this lab are located under `starter-artifacts/pycharm`.
