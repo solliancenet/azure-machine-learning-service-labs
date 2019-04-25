@@ -64,3 +64,19 @@ The quickest way to get going with the labs is to deploy the Deep Learning Virtu
 3. Accept the terms and conditions.
 4. Select Purchase. 
 5. The workspace creation takes a few minutes. During workspace creation, the portal displays the Submitting deployment for Azure Databricks tile on the right side. You may need to scroll right on your dashboard to see the tile. There is also a progress bar displayed near the top of the screen. You can watch either area for progress.
+
+# Quickstart: Azure Notebooks
+
+The quickest way to get going with the labs is upload the files in Azure Notebooks. 
+
+1. You can sign up for a free account with [Azure Notebooks](https://notebooks.azure.com/).
+
+2. Create a new project in Azure Notebooks called “Aml-service-labs”.
+
+3. Create one folder for each lab in your project:  01-model-training, 02-model-management, 03-model-deployment, 04-automl, 05-deep-learning, 06-deploy-to-iot-edge.
+
+4. From starter-artifacts navigate to the [python-notebooks](https://github.com/solliancenet/azure-machine-learning-service-labs/tree/master/starter-artifacts/python-notebooks) link and load the files for each of the labs in their respective folders in your Azure Notebook project. You may have to download the files first to your local computer and then upload them to Azure notebooks. Also remember to maintain any folder structure within each of the labs. For example, the 01-model-training lab has the notebook file “01-model-training.ipynb” at the root and it has two subfolder called “data” for the data files and “training” for the training files.
+
+5. To run a lab, you can start your project to run on “Free Compute”. Set Python 3.6 as your kernel for your notebooks. You can also configure Azure Notebook to run on a Deep Learning Virtual Machine (DLVM). Follow the steps above (Quickstart: Visual Studio 2017 and PyCharm) to setup and configure DLVM. In the Azure Notebook project, you can configure the notebooks to run on Direct Compute by providing the credentials for Azure Notebooks to connect to the DLVM compute target.
+
+6. Next, you follow the steps as outlined for each of labs.
