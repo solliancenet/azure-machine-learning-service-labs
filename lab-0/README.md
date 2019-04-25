@@ -8,12 +8,14 @@ The labs have the following requirements:
 - Azure subscription. You will need a valid and active Azure account to complete this Azure lab. If you do not have one, you can sign up for a [free trial](https://azure.microsoft.com/en-us/free/).
 - One of the following environments:
     - Visual Studio 2017 and the Visual Studio Tools for AI 
+    - Visual Studio Code
     - PyCharm
     - Azure Databricks Workspace
+    - Azure Notebooks
 - For the deep learning lab, you will need a VM or cluster with CPU capabilities.
 
 Depending on which environment you use, there are different requirements. These are summarized as follows:
-- Visual Studio 2017 and PyCharm
+- Visual Studio 2017, Visual Studio Code and PyCharm
     - A Python 3.x Anaconda environment named `azureml` with:
         - The latest version of the Azure Machine Learning Python SDK installed. Use `pip install --upgrade azureml-sdk[notebooks,automl] azureml-dataprep` to install the latest version.
         - The following pip installable packages:
