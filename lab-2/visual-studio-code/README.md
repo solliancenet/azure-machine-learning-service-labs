@@ -3,7 +3,7 @@
 In this lab you will use the capabilities of the Azure Machine Learning service to collect model performance metrics and to capture model version, as well as query the experimentation run history to retrieve captured metrics. 
 
 ## Exercise 0 - Get the lab files
-If you have not cloned this repository to your local machine, do so now. All of the artifacts for this lab are located under `starter-artifacts/python-notebooks`.
+If you have not cloned this repository to your local machine, do so now. All of the artifacts for this lab are located under `starter-artifacts/visual-studio-code`.
 
 ## Exercise 1 - Get oriented to the lab files
 1. On your local computer expand the folder `02-model-management`.
