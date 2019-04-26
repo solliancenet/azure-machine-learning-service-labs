@@ -11,7 +11,7 @@ If you have not cloned this repository to your Azure notebooks under the project
 3. Expand the `data` folder. This folder contains the CSV file `UsedCars_Affordability.csv` which contains the complete data set with labels (Affordable is 1 for affordable, 0 for not affordable).
 4. Expand `training`. This folder contains train.py which will be used later in the lab to train the model using a remote cluster provided by Azure Batch AI.
 5. Open `02_model_management.ipynb`. This is the Python notebook you will step thru executing in this lab.
-6. Confirm that Python 3.6 is set as your kernel for your notebooks. 
+6. Confirm that Python 3.6 is set as your kernel for your notebook. 
 
 ## Exercise 2 - Train a simple model locally
 This lab builds upon the lessons learned in the previous lab, but is self contained so you work thru this lab without having to run a previous lab. As such Steps 1, 2 and 3 in the lab are not explored in detail as their goal is to setup a few experiment runs, which was covered in detail in Lab 1.
