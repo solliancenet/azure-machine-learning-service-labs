@@ -11,7 +11,7 @@ If you have not cloned this repository to your local machine, do so now. All of 
 2. Expand the `data` folder. This folder contains two CSV files. `UsedCars_Clean.csv` represents the unlabeled data and `UsedCars_Affordability.csv` contains the complete data set with labels (Affordable is 1 for affordable, 0 for not affordable).
 3. Expand `training`. This folder contains train.py which will be used later in the lab to train the model using a remote cluster provided by Azure Batch AI.
 4. To run a lab, open Visual Studio Code and open the file `01_model_training.py`.
-5. Confirm that your have setup azure_automl as your interpreter.
+5. Confirm that your have setup `azure_automl` as your interpreter.
 6. `01_model_training.py` is the Python file you will step thru executing in this lab. 
 7. For each step click on `Run Cell` just above the step. 
 
