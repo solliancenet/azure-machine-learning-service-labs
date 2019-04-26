@@ -91,7 +91,7 @@ The quickest way to get going with the labs is upload the files in Azure Noteboo
 
 3. Setup a new conda environment for Azure Auto ML. The easiest way to do that is to download the automl_setup scripts and the YAML file for your machine from the following [GitHub repository](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning). After you run the script it will creates a new conda environment called azure_automl, and installs the necessary packages.
 
-4. From starter-artifacts navigate to the [visual-studio-code](../starter-artifacts/visual-studio-code) and download the project files to your local computer. Also remember to maintain the folder structure within each of the labs. For example, the 01-model-training lab has the notebook file “01-model-training.ipynb” at the root and it has two subfolder called “data” for the data files and “training” for the training files.
+4. From starter-artifacts navigate to the [visual-studio-code](../starter-artifacts/visual-studio-code) and download the project files to your local computer. Also remember to maintain the folder structure within each of the labs. For example, the 01-model-training lab has the python file “01-model-training.py” at the root and it has two subfolder called “data” for the data files and “training” for the training files.
 
 5. In VS code, when you first open the starting python file for a lab, use Select Interpreter command from the Command Palette (⇧⌘P) and select the azure_automl as your interpreter.
 
