@@ -79,7 +79,7 @@ The quickest way to get going with the labs is upload the files in Azure Noteboo
 
 4. From starter-artifacts navigate to the [python-notebooks](../starter-artifacts/python-notebooks) link and load the files for each of the labs in their respective folders in your Azure Notebook project. You may have to download the files first to your local computer and then upload them to Azure notebooks. Also remember to maintain any folder structure within each of the labs. For example, the 01-model-training lab has the notebook file “01-model-training.ipynb” at the root and it has two subfolder called “data” for the data files and “training” for the training files.
 
-5. To run a lab, you can start your project to run on “Free Compute”. Set Python 3.6 as your kernel for your notebooks. You can also configure Azure Notebook to run on a Deep Learning Virtual Machine (DLVM). Follow the steps above (Quickstart: Visual Studio 2017 and PyCharm) to setup and configure DLVM. In the Azure Notebook project, you can configure the notebooks to run on Direct Compute by providing the credentials for Azure Notebooks to connect to the DLVM compute target.
+5. To run a lab, you can start your project to run on “Free Compute”. Set Python 3.6 as your kernel for your notebooks. You can also configure Azure Notebook to run on a Deep Learning Virtual Machine (DLVM). Follow the steps above (Quickstart: Visual Studio 2017 and PyCharm Steps 1 to 6) to setup and configure DLVM. In the Azure Notebook project, you can configure the notebooks to run on Direct Compute by providing the credentials for Azure Notebooks to connect to the DLVM compute target.
 
 6. Next, follow the steps as outlined for each of labs.
 
@@ -89,12 +89,14 @@ The quickest way to get going with the labs is upload the files in Azure Noteboo
 
 2. Install the latest version of [Anaconda](https://www.anaconda.com/distribution/).
 
-3. Setup a new conda environment for Azure Auto ML. The easiest way to do that is to download the automl_setup scripts and the YAML file for your machine from the following [GitHub repository](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning). After you run the script it will creates a new conda environment called azure_automl, and installs the necessary packages.
+3. Setup a new conda environment for Azure Auto ML. The easiest way to do that is to download the automl_setup script for your machine (Windows - automl_setup.cmd, Linux - automl_setup_linux.sh, or Mac - automl_setup_mac.sh) and the common automl_env.yml file from the following [GitHub repository](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning). Open command prompt or terminal and go to the directory where the two files are saved and run the script file. The script will creates a new conda environment called azure_automl, and installs the necessary packages.
 
 4. From starter-artifacts navigate to the [visual-studio-code](../starter-artifacts/visual-studio-code) and download the project files to your local computer. Also remember to maintain the folder structure within each of the labs. For example, the 01-model-training lab has the python file “01-model-training.py” at the root and it has two subfolder called “data” for the data files and “training” for the training files.
 
-5. In VS code, when you first open the starting python file for a lab, use Select Interpreter command from the Command Palette (⇧⌘P) and select the azure_automl as your interpreter.
+5. On your local computer, configure VS code to be the default editor for python files.
 
-6. Next, follow the steps as outlined for each of labs.
+6. In VS code, when you first open the starting python file for a lab, use Select Interpreter command from the Command Palette (⇧⌘P) and select the azure_automl as your interpreter.
+
+7. Next, follow the steps as outlined for each of labs.
 
 
