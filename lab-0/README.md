@@ -95,7 +95,9 @@ The quickest way to get going with the labs is upload the files in Azure Noteboo
 
 5. On your local computer, configure VS code to be the default editor for python files.
 
-6. In VS code, when you first open the starting python file for a lab, use Select Interpreter command from the Command Palette (⇧⌘P) and select the azure_automl as your interpreter.
+6. When you open the starting python file for a lab: (a) please first ensure that VS code is not running, (b) open the starting python file in VS code by double clicking on the file. This will ensure that the current working directory for the lab will be same as the directory of the starting python file. 
+
+7. In VS code, when you first open the starting python file for a lab, use Select Interpreter command from the Command Palette (⇧⌘P) and select the azure_automl as your interpreter.
 
 7. Next, follow the steps as outlined for each of labs.
 
