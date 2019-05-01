@@ -3,13 +3,9 @@
 There are five steps to setting up your Azure Notebooks Environment
 
 1. Sign up for a free account with [Azure Notebooks](https://notebooks.azure.com/).
-
 2. Deploy a Deep Learning Virtual Machine (DLVM).
-
 3. Update the Azure ML Python SDK on the DLVM.
-
 4. Upload the lab files in Azure Notebooks.
-
 5. Connect Azure Notebooks to use the DLVM.
 
 `Steps 2-5 are explained in details below`
