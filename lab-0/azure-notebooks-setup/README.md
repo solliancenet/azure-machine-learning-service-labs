@@ -24,7 +24,7 @@ There are five steps to setting up your Azure Notebooks Environment
 ![Create DLVM Step 1](./images/setup_vm/create_vm_1.png)
 
 
-5. Select your VM size: Standard NC6
+5. Select your VM size: **Standard NC6**
 
 ![Create DLVM Step 2](./images/setup_vm/create_vm_2.png)
 
