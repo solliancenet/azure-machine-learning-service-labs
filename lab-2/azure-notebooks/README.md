@@ -10,7 +10,7 @@ If you have not cloned this repository to your Azure notebooks under the project
 2. In the project expand the folder `02-model-management`.
 3. Expand the `data` folder. This folder contains the CSV file `UsedCars_Affordability.csv` which contains the complete data set with labels (Affordable is 1 for affordable, 0 for not affordable).
 4. Expand `training`. This folder contains train.py which will be used later in the lab to train the model using a remote cluster provided by Azure Batch AI.
-5. To run a lab, you can start your project to run on the `DLVM` you created as part of setup in `lab-0`.
+5. To run a lab, you can start your project to run on the DLVM you created as part of setup in `lab-0`.
 6. Open `02_model_management.ipynb`. This is the Python notebook you will step thru executing in this lab.
 7. Confirm that `Python 3.6 – AzureML` is set as your kernel for your notebook.
 
