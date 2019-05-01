@@ -11,9 +11,9 @@ If you have not cloned this repository to your Azure notebooks under the project
 2. In the project expand the folder `01-model-training`.
 3. Expand the `data` folder. This folder contains two CSV files. `UsedCars_Clean.csv` represents the unlabeled data and `UsedCars_Affordability.csv` contains the complete data set with labels (Affordable is 1 for affordable, 0 for not affordable).
 4. Expand `training`. This folder contains train.py which will be used later in the lab to train the model using a remote cluster provided by Azure Batch AI.
-5. To run a lab, you can start your project to run on “Free Compute”.
+5. To run a lab, you can start your project to run on the `DLVM` you created as part of setup in `lab-0`.
 6. Open `01_model_training.ipynb`. This is the Python notebook you will step thru executing in this lab.
-7. Confirm that Python 3.6 is set as your kernel for your notebook.
+7. Confirm that `Python 3.6 – AzureML` is set as your kernel for your notebook.
 
 ## Exercise 2 - Train a simple model locally
 1. Select Step 1 and execute the code.. Take a moment to look at the data loaded into the Pandas Dataframe - it contains data about used cars such as the price (in dollars), age (in years), KM (kilometers driven) and other attributes like weather it is automatic transimission, the number of doors, and the weight.
