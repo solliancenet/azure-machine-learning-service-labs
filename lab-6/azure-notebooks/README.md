@@ -8,9 +8,9 @@ If you have not cloned this repository to your Azure notebooks under the project
 ## Exercise 1 - Get oriented to the lab files
 1. Within Azure Notebook, under `My Projects` open the project `Aml-service-labs`. 
 2. In the project expand the folder `06_deploy_to_iot_edge`.
-3. To run a lab, you can start your project to run on “Free Compute”.
+3. To run a lab, you can start your project to run on the DLVM you created as part of setup in `lab-0`.
 4. Open `06_deploy_to_iot_edge.ipynb`. This is the Python notebook you will step thru executing in this lab.
-5. Confirm that Python 3.6 is set as your kernel for your notebook.
+5. Confirm that `Python 3.6 – AzureML` is set as your kernel for your notebook.
 
 ## Exercise 2 - Provision an IoT Edge Device and IoT Hub
 In this exercise, you will provision an Ubuntu Linux Virtual Machine that will act as your IoT Edge device. You will perform the following steps using the Azure CLI. 
