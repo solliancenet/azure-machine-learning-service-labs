@@ -7,7 +7,7 @@ If you have not cloned this repository to your local machine, do so now. All of 
 
 ## Exercise 1 - Get oriented to the lab files
 1. On your local computer expand the folder `06_deploy_to_iot_edge`.
-2. To run a lab, open Visual Studio Code and open the file `06_deploy_to_iot_edge.py`.
+2. To run a lab, open Visual Studio Code by double clicking the starting python file: `06_deploy_to_iot_edge.py`.
 3. Confirm that your have setup `azure_automl` as your interpreter.
 4. `06_deploy_to_iot_edge.py` is the Python file you will step thru executing in this lab.
 5. For each step click on `Run Cell` just above the step.
