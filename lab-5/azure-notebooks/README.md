@@ -8,9 +8,9 @@ If you have not cloned this repository to your Azure notebooks under the project
 ## Exercise 1 - Get oriented to the lab files
 1. Within Azure Notebook, under `My Projects` open the project `Aml-service-labs`. 
 2. In the project expand the folder `05-deep-learning`.
-3. To run a lab, you can start your project to run on “Free Compute”.
+3. To run a lab, you can start your project to run on the DLVM you created as part of setup in `lab-0`.
 4. Open `05_deep_learning.ipynb`. This is the Python notebook you will step thru executing in this lab.
-5. Confirm that Python 3.6 is set as your kernel for your notebook.
+5. Confirm that `Python 3.6 – AzureML` is set as your kernel for your notebook.
 
 ## Exercise 2 - Train an autoencoder using GPU
 1. Start with Step 1. Here you will use Keras to define an autoencoder. Don't get hung up on the details of constructing the auto-encoder. The point of this lab is to show you how to train neural networks using GPU's. Execute Step 1. In the output, verify that `K.tensorflow_backend._get_available_gpus()` returned an entry describing a GPU available in your environment.
