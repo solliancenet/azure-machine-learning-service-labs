@@ -29,7 +29,7 @@ There are five steps to setting up your Azure Notebooks Environment
 ![Create DLVM Step 2](./images/setup_vm/create_vm_2.png)
 
 
-6. **Complete the rest of the steps**.
+6. Complete the rest of the steps.
 
 7. Wait for the DLVM to be `Running`. You can monitor the status of the DLVM in your Azure Portal under the `Virtual machines` section.
 
