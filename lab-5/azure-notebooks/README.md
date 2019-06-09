@@ -6,7 +6,7 @@ In this lab you train deep learning models built with Keras and a Tensorflow bac
 Confirm that you have completed lab: [lab-0](../../lab-0/azure-notebooks-setup) for Azure Notebooks before you begin.
 
 ## Exercise 1 - Get oriented to the lab files
-1. Within Azure Notebook, expand the folder `05-deep-learning`.
+1. Within Azure Notebook, expand the folder `starter-artifacts/azure-notebooks/05-deep-learning`.
 2. To run a lab, open `05_deep_learning.ipynb`. This is the Python notebook you will step thru executing in this lab.
 
 ## Exercise 2 - Train an autoencoder using GPU
