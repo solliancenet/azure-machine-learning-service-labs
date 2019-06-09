@@ -8,8 +8,8 @@ If you have not cloned this repository to your local machine, do so now. All of 
 ## Exercise 1 - Get oriented to the lab files
 1. On your local computer expand the folder `02-model-management`.
 2. Expand the `data` folder. This folder contains the CSV file `UsedCars_Affordability.csv` which contains the complete data set with labels (Affordable is 1 for affordable, 0 for not affordable).
-3. Expand `training`. This folder contains train.py which will be used later in the lab to train the model using a remote cluster provided by Azure Batch AI.
-4. To run a lab, open Visual Studio Code by double clicking the starting python file: `02_model_management.py`.
+3. Expand `training`. This folder contains train.py which will be used later in the lab to train the model using a remote cluster provided by AML Compute.
+4. To run a lab, start Visual Studio Code and open the folder: `02-model-management` and click the starting python file: `02_model_management.py`.
 5. Confirm that your have setup `azure_automl` as your interpreter.
 6. `02_model_management.py` is the Python file you will step thru executing in this lab.
 7. For each step click on `Run Cell` just above the step. 
@@ -23,8 +23,8 @@ This lab builds upon the lessons learned in the previous lab, but is self contai
 ## Exercise 3 - Use Azure Machine Learning to query for performance metrics
 1. As was demonstrated in the previous lab, you can use the Workspace to get a list of Experiments. You can also query for a particular Experiment by name. With an Experiment in hand, you review all runs associated with that Experiment and retrieve the metrics associated with each run. Execute Step #4 to see this process. What was the accuracy of the only run for Experiment-02-03?
 
-## Exercise 4 - Remotely train a model in Azure Batch AI
-1. Remote model training was covered in the previous lab. Execute Step #5 to create or retreive your Azure Batch AI cluster and the submit to it a model training job. Wait for the run to complete before proceeding to the next exercise.
+## Exercise 4 - Remotely train a model in AML Compute
+1. Remote model training was covered in the previous lab. Execute Step #5 to create or retreive your AML Compute cluster and the submit to it a model training job. Wait for the run to complete before proceeding to the next exercise.
 
 ## Exercise 5 - Retrieve metrics for the remote Run
 1. You can easily retrieve the metrics for a Run executed remotely by using `run` object returned by the call to `Experiment.submit`. Execute Step 6 to retrieve metrics for the run you just executed. What was the accuracy of the run?
