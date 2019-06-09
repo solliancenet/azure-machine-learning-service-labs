@@ -8,7 +8,7 @@ If you have not cloned this repository to your local machine, do so now. All of 
 ## Exercise 1 - Get oriented to the lab files
 1. On your local computer expand the folder `04-automl`.
 2. Expand the `data` folder. This folder contains the CSV file `UsedCars_Affordability.csv` which contains the complete data set with labels (Affordable is 1 for affordable, 0 for not affordable).
-3. To run a lab, open Visual Studio Code by double clicking the starting python file: `04_automl.py`.
+3. To run a lab, start Visual Studio Code and open the folder: `04-automl` and click the starting python file: `04_automl.py`.
 4. Confirm that your have setup `azure_automl` as your interpreter.
 5. `04_automl.py` is the Python file you will step thru executing in this lab.
 6. For each step click on `Run Cell` just above the step. 
