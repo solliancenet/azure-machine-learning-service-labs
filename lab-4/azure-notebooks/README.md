@@ -6,7 +6,7 @@ In this lab you will us the automated machine learning (Auto ML) capabilities wi
 Confirm that you have completed lab: [lab-0](../../lab-0/azure-notebooks-setup) for Azure Notebooks before you begin.
 
 ## Exercise 1 - Get oriented to the lab files
-1. Within Azure Notebook, expand the folder `04-automl`.
+1. Within Azure Notebook, expand the folder `starter-artifacts/azure-notebooks/04-automl`.
 2. Expand the `data` folder. This folder contains the CSV file `UsedCars_Affordability.csv` which contains the complete data set with labels (Affordable is 1 for affordable, 0 for not affordable).
 3. To run a lab, open `04_automl.ipynb`. This is the Python notebook you will step thru executing in this lab.
 
