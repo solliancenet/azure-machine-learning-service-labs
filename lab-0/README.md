@@ -73,13 +73,22 @@ The quickest way to get going with the labs is to deploy the Deep Learning Virtu
 
 2. Once the setup is done, you can then follow the steps as outlined for each of labs.
 
+# Quickstart: Jupyter Notebooks
+
+1. From starter-artifacts navigate to the [python-notebooks](../starter-artifacts/python-notebooks) and download the project files to your local computer. Also remember to maintain the folder structure within each of the labs. For example for `lab-1`, the root folder is `01-model-training` and the folder contains the starting python file `01-model-training.ipynb` and it has two subfolders called `data` for the data files and `training` for the training files. 
+
+2. Install the latest version of [Anaconda](https://www.anaconda.com/distribution/).
+
+3. Setup a new conda environment for Azure Auto ML. The easiest way to do that is to download the automl_setup script for your machine (Windows-automl_setup.cmd, Linux-automl_setup_linux.sh, Mac-automl_setup_mac.sh) and the common automl_env.yml file from the following [GitHub repository](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning). Open command prompt or terminal and go to the directory where the two files are saved and run the script file. The script will creates a new conda environment called `azure_automl`, and installs the necessary packages.
+
+
 # Quickstart: Visual Studio Code
 
 1. Install [Visual Studio Code](https://code.visualstudio.com/docs/setup/setup-overview) on your machine.
 
 2. Install the latest version of [Anaconda](https://www.anaconda.com/distribution/).
 
-3. Setup a new conda environment for Azure Auto ML. The easiest way to do that is to download the automl_setup script for your machine (Windows-automl_setup.cmd, Linux-automl_setup_linux.sh, Mac-automl_setup_mac.sh) and the common automl_env.yml file from the following [GitHub repository](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning). Open command prompt or terminal and go to the directory where the two files are saved and run the script file. The script will creates a new conda environment called azure_automl, and installs the necessary packages.
+3. Setup a new conda environment for Azure Auto ML. The easiest way to do that is to download the automl_setup script for your machine (Windows-automl_setup.cmd, Linux-automl_setup_linux.sh, Mac-automl_setup_mac.sh) and the common automl_env.yml file from the following [GitHub repository](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning). Open command prompt or terminal and go to the directory where the two files are saved and run the script file. The script will creates a new conda environment called `azure_automl`, and installs the necessary packages.
 
 4. From starter-artifacts navigate to the [visual-studio-code](../starter-artifacts/visual-studio-code) and download the project files to your local computer. Also remember to maintain the folder structure within each of the labs. For example for `lab-1`, the root folder is `01-model-training` and the folder contains the starting python file `01-model-training.py` and it has two subfolders called `data` for the data files and `training` for the training files. 
 
