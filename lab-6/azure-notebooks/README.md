@@ -6,7 +6,7 @@ In this lab you deploy a trained model container to an IoT Edge device.
 Confirm that you have completed lab: [lab-0](../../lab-0/azure-notebooks-setup) for Azure Notebooks before you begin.
 
 ## Exercise 1 - Get oriented to the lab files
-1. Within Azure Notebook, expand the folder `06_deploy_to_iot_edge`.
+1. Within Azure Notebook, expand the folder `starter-artifacts/azure-notebooks/06_deploy_to_iot_edge`.
 2. To run a lab, open `06_deploy_to_iot_edge.ipynb`. This is the Python notebook you will step thru executing in this lab.
 
 ## Exercise 2 - Provision an IoT Edge Device and IoT Hub
