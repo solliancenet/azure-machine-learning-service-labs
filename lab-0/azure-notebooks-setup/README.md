@@ -43,14 +43,14 @@ At a high level, here are the setup steps you will need to perform to prepare yo
 
 ## Locate your lab files 
 
-1.  Navigate to the `>starter-artifacts->python-notebooks` folder where you will find all your lab files.
+1.  Navigate to the `>starter-artifacts->azure-notebooks` folder where you will find all your lab files.
 
 	<img src="./images/04.png" width="70%" height="70%" title="Locate your lab files">
 
 
 ## Update your Notebook Environment 
 
-1. Open notebook: **00-setup-env/00-setup.ipynb**
+1. Open notebook: **azure-notebooks/00-setup-env/00-setup.ipynb**
 
 2. Run each cell in the notebook to install the required libraries.
 
