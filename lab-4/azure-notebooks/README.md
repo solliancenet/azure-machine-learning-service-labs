@@ -3,15 +3,12 @@
 In this lab you will us the automated machine learning (Auto ML) capabilities within the Azure Machine Learning service to automatically train multiple models with varying algorithms and hyperparameters, select the best performing model and register that model.
 
 ## Exercise 0 - Get the lab files
-If you have not cloned this repository to your Azure notebooks under the project `Aml-service-labs`, do so now. All of the artifacts for this lab are located under `starter-artifacts/python-notebooks`.
+Confirm that you have completed lab: [lab-0](../../lab-0/azure-notebooks-setup) for Azure Notebooks before you begin.
 
 ## Exercise 1 - Get oriented to the lab files
-1. Within Azure Notebook, under `My Projects` open the project `Aml-service-labs`. 
-2. In the project expand the folder `04-automl`.
-3. Expand the `data` folder. This folder contains the CSV file `UsedCars_Affordability.csv` which contains the complete data set with labels (Affordable is 1 for affordable, 0 for not affordable).
-4. To run a lab, you can start your project to run on the DLVM you created as part of setup in `lab-0`.
-5. Open `04_automl.ipynb`. This is the Python notebook you will step thru executing in this lab.
-6. Confirm that `Python 3.6 – AzureML` is set as your kernel for your notebook. 
+1. Within Azure Notebook, expand the folder `04-automl`.
+2. Expand the `data` folder. This folder contains the CSV file `UsedCars_Affordability.csv` which contains the complete data set with labels (Affordable is 1 for affordable, 0 for not affordable).
+3. To run a lab, open `04_automl.ipynb`. This is the Python notebook you will step thru executing in this lab.
 
 ## Exercise 2 - Train a model using AutoML
 This lab builds upon the lessons learned in the previous lab, but is self contained so you work thru this lab without having to run a previous lab.  
