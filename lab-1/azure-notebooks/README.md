@@ -29,10 +29,10 @@ In the steps that follow, you will train multiple models using different sizes o
 3. To begin capturing metrics, you must first create an Experiment and then call `start_logging()` on that Experiment. The return value of this call is a Run. This root run can have other child runs. When you are finished with an experiment run, use `complete()` to close out the root run. Execute Step 10 to train four different models using differing amounts of training data and log the results to Azure Machine Learning.
 4. Now that you have captured history for various runs, you can review the runs. You could use the Azure Portal for this - go to the Azure Portal, find your Azure Machine Learning Workspace, select Experiments and select the UsedCars_Experiment. However, in this case we will use the AML SDK to query for the runs. Select and execute Step 11 to view the runs and their status.
 
-## Exercise 4 - Train remotely using Azure Batch AI
-Up until now, all of your training was executed locally on Azure Notebooks. Now you will execute the same logic targeting a remote Azure Batch AI cluster, which you will provision from code.
+## Exercise 4 - Train remotely using AML Compute
+Up until now, all of your training was executed locally on Azure Notebooks. Now you will execute the same logic targeting a remote AML Compute cluster, which you will provision from code.
 
-1. Read thru and then execute Step 12 in which you will create an Azure Batch AI cluster using code. Once your cluster is ready, you should see output similar to the following:
+1. Read thru and then execute Step 12 in which you will create an AML Compute cluster using code. Once your cluster is ready, you should see output similar to the following:
 ```
 Creating a new compute target...
 Creating
@@ -43,6 +43,6 @@ Minimum number of nodes requested have been provisioned
 
 ```
 2. With your cluster ready, you need to upload the training data to the default DataStore for your AML Workspace (which uses Azure Storage). Execute Step 13 to upload the data folder.  
-3. Next, you will need to create a training script that is similar to the code you have executed locally to train the model. Open `training/train.py` and read thru it. You do not need to execute this script, as you will send it to Azure Batch AI for execution. 
+3. Next, you will need to create a training script that is similar to the code you have executed locally to train the model. Open `training/train.py` and read thru it. You do not need to execute this script, as you will send it to AML Compute for execution. 
 4. Return to `01_model_training.py`. You will create an estimator that describes the configuration of the job that will execute your model training script. Execute Step 14 to create this estimator.
 5. As the last step, submit the job using the `submit()` method of the Experiment object. Execute Step 15 to remotely execute your training script. The output you should see will begin with the creation of a Docker Container that contains your configured dependencies, followed by the execution of your training script.
