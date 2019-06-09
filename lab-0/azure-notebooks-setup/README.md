@@ -1,88 +1,57 @@
 # Azure Notebooks Setup
 
-There are five steps to setting up your Azure Notebooks Environment
+At a high level, here are the setup steps you will need to perform to prepare your Azure Notebooks Environment (the detailed instructions follow):
 
-1. Sign up for a free account with [Azure Notebooks](https://notebooks.azure.com/).
-2. Deploy a Deep Learning Virtual Machine (DLVM).
-3. Update the Azure ML Python SDK on the DLVM.
-4. Upload the lab files in Azure Notebooks.
-5. Connect Azure Notebooks to use the DLVM.
+1. Setup an Azure Notebooks account. 
 
-`Steps 2-5 are explained in details below`
+2. Setup Azure Notebooks Project
 
+3. Start the Notebook Server
 
-## Deploy a Deep Learning Virtual Machine
+4. Locate your lab files
 
-1. Log into your Azure Portal
+5. Update your Notebook Environment 
 
-2. Navigate to the link to [create your own DLVM](https://portal.azure.com/#create/microsoft-ads.dsvm-deep-learningtoolkit)
+## Setup an Azure Notebooks account
+1. In your browser, navigate to https://notebooks.azure.com/.
 
-3. Select the Create button at the bottom to be taken into a wizard.
+2. Select Sign In from the top, right corner and sign in using your Microsoft Account credentials. After a successful login, you will have implicitly created the account and are ready to continue.
 
-4. The wizard used to create the DLVM requires inputs for each of the four steps enumerated on the right of this figure. It is important that you select **Linux** as your OS type for DLVM.
-
-![Create DLVM Step 1](./images/setup_vm/create_vm_1.png)
-
-
-5. Select your VM size: **Standard NC6**
-
-![Create DLVM Step 2](./images/setup_vm/create_vm_2.png)
-
-
-6. Complete the rest of the steps.
-
-7. Wait for the DLVM to be `Running`. You can monitor the status of the DLVM in your Azure Portal under the `Virtual machines` section.
-
-
-## Update the Deep Learning Virtual Machine
-
-1. Obtain the public IP address `xx.xxx.xxx.xx` of the DLVM from Azure Portal.
-
-2. Log into Jupyter hub running on the DLVM using the URL: https://xx.xxx.xxx.xx:8000/hub/login
-
-![Jupyter Hub Login](./images/setup_vm/hub_login.png)
-
-3. Wait for the Jupyter server to start.
-
-4. Create a New notebook with `Python 3.6 - AzureML` kernel.
-
-![New Jupyter Notebook](./images/setup_vm/create_nb.png)
-
-5. Execute the following `1 of 2` pip command in one of the cells: `!pip install --upgrade azureml-sdk[explain,automl]`
-
-![Pip 1](./images/setup_vm/pip_1.png)
-
-6. Execute the following `2 of 2` pip command in one of the cells: `!pip install azureml-sdk[notebooks]`
-
-![Pip 2](./images/setup_vm/pip_2.png)
-
-## Upload the lab files in Azure Notebooks
+## Setup Azure Notebooks Project
 
 1. Log in to [Azure Notebooks](https://notebooks.azure.com/).
 
-2. Create a new project in Azure Notebooks called “Aml-service-labs”.
+2. Navigate to **My Projects** page
 
-3. Create one folder for each lab in your project:  01-model-training, 02-model-management, 03-model-deployment, 04-automl, 05-deep-learning, 06-deploy-to-iot-edge.
+3. Select **Upload GitHub Repo**.
 
-4. From starter-artifacts navigate to the [python-notebooks](../../starter-artifacts/python-notebooks) link and load the files for each of the labs in their respective folders in your Azure Notebooks project. You may have to download the files first to your local computer and then upload them to Azure notebooks. Also remember to maintain any folder structure within each of the labs. For example, the 01-model-training lab has the notebook file “01-model-training.ipynb” at the root and it has two subfolder called “data” for the data files and “training” for the training files.
+4. In the Upload GitHub Repository dialog, for the GitHub repository provide `https://github.com/solliancenet/azure-machine-learning-service-labs.git`, and select **Import**. Allow the import a few moments to complete, the dialog will dismiss once the import has completed.
 
-## Connect Azure Notebooks to use the DLVM
+<img src="./images/01.png" width="70%" height="70%" title="Upload GitHub Repo">
 
-1. Open the project `Aml-service-labs` in Azure Notebooks.
+## Start the Notebook Server
 
-2. Select the DLVM you created as your `Compute` target.
+1. Navigate to your project: `azure-machine-learning-service-labs`
 
-![Azure Notebooks Setup Step 1](./images/setup_compute/compute_1.png)
+2. Start your Notebook server on `Free Compute` by clicking on the **Play** icon in the toolbar as shown:
 
-3. Provide the requested information and click `Validate`
+	<img src="./images/02.png" width="70%" height="70%" title="Start Notebook Server">
 
-![Azure Notebooks Setup Step 2](./images/setup_compute/compute_2.png)
+3. It should open **Jupyter Notebooks** interface.
 
-4. Click `Run`
+	<img src="./images/03.png" width="70%" height="70%" title="Jupyter Notebooks Interface">
 
-![Azure Notebooks Setup Step 3](./images/setup_compute/compute_3.png)
+## Locate your lab files 
 
-5. Now you are ready to follow the steps as outlined for each of labs. Note that when you first open the starting notebook file for the lab, remember to setup `Python 3.6 - AzureML` as the kernel.
+1.  Navigate to the `>starter-artifacts->python-notebooks` folder where you will find all your lab files.
 
-![Azure Notebooks Setup Step 4](./images/setup_compute/setup_kernel.png)
+	<img src="./images/04.png" width="70%" height="70%" title="Locate your lab files">
 
+
+## Update your Notebook Environment 
+
+1. Open notebook: **00-setup-env/00-setup.ipynb**
+
+2. Run each cell in the notebook to install the required libraries.
+
+	<img src="./images/05.png" width="70%" height="70%" title="Update your Notebook Environment">
