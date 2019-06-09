@@ -3,14 +3,11 @@
 In this lab you deploy a trained model container to an IoT Edge device.
 
 ## Exercise 0 - Get the lab files
-If you have not cloned this repository to your Azure notebooks under the project `Aml-service-labs`, do so now. All of the artifacts for this lab are located under `starter-artifacts/python-notebooks`.
+Confirm that you have completed lab: [lab-0](../../lab-0/azure-notebooks-setup) for Azure Notebooks before you begin.
 
 ## Exercise 1 - Get oriented to the lab files
-1. Within Azure Notebook, under `My Projects` open the project `Aml-service-labs`. 
-2. In the project expand the folder `06_deploy_to_iot_edge`.
-3. To run a lab, you can start your project to run on the DLVM you created as part of setup in `lab-0`.
-4. Open `06_deploy_to_iot_edge.ipynb`. This is the Python notebook you will step thru executing in this lab.
-5. Confirm that `Python 3.6 – AzureML` is set as your kernel for your notebook.
+1. Within Azure Notebook, expand the folder `06_deploy_to_iot_edge`.
+2. To run a lab, open `06_deploy_to_iot_edge.ipynb`. This is the Python notebook you will step thru executing in this lab.
 
 ## Exercise 2 - Provision an IoT Edge Device and IoT Hub
 In this exercise, you will provision an Ubuntu Linux Virtual Machine that will act as your IoT Edge device. You will perform the following steps using the Azure CLI. 
