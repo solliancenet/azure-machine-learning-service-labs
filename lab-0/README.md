@@ -69,7 +69,7 @@ The quickest way to get going with the labs is to deploy the Deep Learning Virtu
 
 # Quickstart: Azure Notebooks
 
-1. Please follow the 5 steps outlined in [Azure Notebooks Setup Page](./azure-notebooks-setup) before continuing. 
+1. Please follow the steps outlined in [Azure Notebooks Setup Page](./azure-notebooks-setup) before continuing. 
 
 2. Once the setup is done, you can then follow the steps as outlined for each of labs.
 
