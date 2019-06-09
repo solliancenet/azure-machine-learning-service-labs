@@ -3,17 +3,14 @@
 In this lab you will setup the Azure Machine Learning service from code and create a classical machine learning model that logs metrics collected during model training.
 
 ## Exercise 0 - Get the lab files
-If you have not cloned this repository to your Azure notebooks under the project `Aml-service-labs`, do so now. All of the artifacts for this lab are located under `starter-artifacts/python-notebooks`.
+Confirm that you have completed lab: [lab-0](../../lab-0/azure-notebooks-setup) for Azure Notebooks before you begin.
 
 ## Exercise 1 - Get oriented to the lab files
 
-1. Within Azure Notebook, under `My Projects` open the project `Aml-service-labs`. 
-2. In the project expand the folder `01-model-training`.
-3. Expand the `data` folder. This folder contains two CSV files. `UsedCars_Clean.csv` represents the unlabeled data and `UsedCars_Affordability.csv` contains the complete data set with labels (Affordable is 1 for affordable, 0 for not affordable).
-4. Expand `training`. This folder contains train.py which will be used later in the lab to train the model using a remote cluster provided by Azure Batch AI.
-5. To run a lab, you can start your project to run on the DLVM you created as part of setup in `lab-0`.
-6. Open `01_model_training.ipynb`. This is the Python notebook you will step thru executing in this lab.
-7. Confirm that `Python 3.6 – AzureML` is set as your kernel for your notebook.
+1. Within Azure Notebook, expand the folder `01-model-training`. 
+2. Expand the `data` folder. This folder contains two CSV files. `UsedCars_Clean.csv` represents the unlabeled data and `UsedCars_Affordability.csv` contains the complete data set with labels (Affordable is 1 for affordable, 0 for not affordable).
+3. Expand `training`. This folder contains train.py which will be used later in the lab to train the model using a remote cluster provided by AML Compute.
+4. To run a lab, open `01_model_training.ipynb`. This is the Python notebook you will step thru executing in this lab.
 
 ## Exercise 2 - Train a simple model locally
 1. Select Step 1 and execute the code.. Take a moment to look at the data loaded into the Pandas Dataframe - it contains data about used cars such as the price (in dollars), age (in years), KM (kilometers driven) and other attributes like weather it is automatic transimission, the number of doors, and the weight.
