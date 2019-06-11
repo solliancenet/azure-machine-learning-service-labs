@@ -1,6 +1,6 @@
 # Azure Notebooks Setup
 
-At a high level, here are the setup steps you will need to perform to prepare your Azure Notebooks Environment (the detailed instructions follow):
+At a high level, here are the setup tasks you will need to perform to prepare your Azure Notebooks Environment (the detailed instructions follow):
 
 1. Setup an Azure Notebooks account. 
 
@@ -12,12 +12,12 @@ At a high level, here are the setup steps you will need to perform to prepare yo
 
 5. Update your Notebook Environment 
 
-## Setup an Azure Notebooks account
+## Task 1: Setup an Azure Notebooks account
 1. In your browser, navigate to https://notebooks.azure.com/.
 
 2. Select Sign In from the top, right corner and sign in using your Microsoft Account credentials. After a successful login, you will have implicitly created the account and are ready to continue.
 
-## Setup Azure Notebooks Project
+## Task 2: Setup Azure Notebooks Project
 
 1. Log in to [Azure Notebooks](https://notebooks.azure.com/).
 
@@ -29,7 +29,7 @@ At a high level, here are the setup steps you will need to perform to prepare yo
 
 <img src="./images/01.png" width="70%" height="70%" title="Upload GitHub Repo">
 
-## Start the Notebook Server
+## Task 3: Start the Notebook Server
 
 1. Navigate to your project: `azure-machine-learning-service-labs`
 
@@ -41,14 +41,14 @@ At a high level, here are the setup steps you will need to perform to prepare yo
 
 	<img src="./images/03.png" width="70%" height="70%" title="Jupyter Notebooks Interface">
 
-## Locate your lab files 
+## Task 4: Locate your lab files 
 
 1.  Navigate to the `>starter-artifacts->azure-notebooks` folder where you will find all your lab files.
 
 	<img src="./images/04.png" width="70%" height="70%" title="Locate your lab files">
 
 
-## Update your Notebook Environment 
+## Task 5: Update your Notebook Environment 
 
 1. Open notebook: **azure-notebooks/00-setup-env/00-setup.ipynb**
 
