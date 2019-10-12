@@ -90,7 +90,7 @@ The quickest way to get going with the labs is to deploy the Deep Learning Virtu
 
 3. Setup a new conda environment for Azure Auto ML. The easiest way to do that is to download the automl_setup script for your machine (Windows-automl_setup.cmd, Linux-automl_setup_linux.sh, Mac-automl_setup_mac.sh) and the common automl_env.yml file from the following [GitHub repository](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning). 
 
-**Note**: If you plan to run Lab 5 (deep learning), you need to update the ```automl_setup``` file by adding the following line at the end of the ```dependencies`` section:
+**Note**: If you plan to run Lab 5 (deep learning), you need to update the ```automl_setup``` file by adding the following line at the end of the ```dependencies``` section:
 
 ```- keras-gpu```
 
