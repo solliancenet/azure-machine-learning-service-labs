@@ -88,14 +88,22 @@ The quickest way to get going with the labs is to deploy the Deep Learning Virtu
 
 2. Install the latest version of [Anaconda](https://www.anaconda.com/distribution/).
 
-3. Setup a new conda environment for Azure Auto ML. The easiest way to do that is to download the automl_setup script for your machine (Windows-automl_setup.cmd, Linux-automl_setup_linux.sh, Mac-automl_setup_mac.sh) and the common automl_env.yml file from the following [GitHub repository](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning). Open the Anaconda command prompt and go to the directory where the two files are saved and run the script file. The script will creates a new conda environment called `azure_automl`, and installs the necessary packages.
+3. Setup a new conda environment for Azure Auto ML. The easiest way to do that is to download the automl_setup script for your machine (Windows-automl_setup.cmd, Linux-automl_setup_linux.sh, Mac-automl_setup_mac.sh) and the common automl_env.yml file from the following [GitHub repository](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning). 
+
+**Note**: If you plan to run Lab 5 (deep learning), you need to update the ```automl_setup``` file by adding the following line at the end of the ```dependencies`` section:
+
+```- keras-gpu```
+
+The purpose of the line is to add to your environment the GPU-enabled Keras library (which depends on the GPU-enabled TensorFlow library as well). If you don't update the setup file and run it as is, you will need to manually install the ```keras-gpu``` library before running Lab 5.
+
+Open the Anaconda command prompt and go to the directory where the two files are saved and run the script file. The script will creates a new conda environment called `azure_automl`, and installs the necessary packages.
 
 4. From starter-artifacts navigate to the [visual-studio-code](../starter-artifacts/visual-studio-code) and download the project files to your local computer. Also remember to maintain the folder structure within each of the labs. For example for `lab-1`, the root folder is `01-model-training` and the folder contains the starting python file `01-model-training.py` and it has two subfolders called `data` for the data files and `training` for the training files. 
 
 5. When you are ready to start a lab: (1) start Visual Stuido Code, (2) go to File->Open Menu, and (3) open the **folder** for the lab. For example, to work on `lab-1`, open the folder `01-model-training` from Visual Studio Code. This will ensure that the current working directory for the quickstart’s starting python file will set correctly. 
 
-7. In VS code, when you first open the starting python file for a lab, use Select Interpreter command from the Command Palette (⇧⌘P) and select the azure_automl as your interpreter.
+6. In VS code, when you first open the starting python file for a lab, use Select Interpreter command from the Command Palette (⇧⌘P) and select the azure_automl as your interpreter.
 
-8. Next, follow the steps as outlined for each of labs.
+7. Next, follow the steps as outlined for each of labs.
 
 
