@@ -52,6 +52,6 @@ At a high level, here are the setup tasks you will need to perform to prepare yo
 
 ## Task 3: Locate the Lab Notebooks
 
-1. From the Jupyter Notebooks interface, navigate to the `quick-starts->azure-machine-learning-quickstarts->aml-python-sdk->starter-artifacts->nbvm-notebooks` folder where you will find all your quickstart files.
+1. From the Jupyter Notebooks interface, navigate to the `service-labs->azure-machine-learning-service-labs->starter-artifacts->nbvm-notebooks` folder where you will find all your quickstart files.
 
    ![Find your QuickStart Notebooks](images/06.png)
