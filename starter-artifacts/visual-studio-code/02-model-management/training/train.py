@@ -32,11 +32,19 @@ def train_eval_register_model(full_X, full_Y,training_set_percentage):
     # Acquire the current run
     run = Run.get_context()
 
-    train_X, test_X, train_Y, test_Y = train_test_split(full_X, full_Y, train_size=training_set_percentage, random_state=42)
+    train_X, test_X, train_Y, test_Y = train_test_split(full_X, full_Y, 
+                                                        train_size=training_set_percentage, 
+                                                        test_size=1.0-training_set_percentage, 
+                                                        random_state=42)
+
+    train_X = train_X.values.astype(float)
+    train_Y = train_Y.values.ravel()
+    test_X = test_X.values.astype(float)
+    test_Y = test_Y.values.ravel()
 
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(train_X)
-    clf = linear_model.LogisticRegression(C=1)
+    clf = linear_model.LogisticRegression(C=1, solver='lbfgs')
     clf.fit(X_scaled, train_Y)
 
     scaled_inputs = scaler.transform(test_X)
