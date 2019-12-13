@@ -6,7 +6,7 @@ In this lab you deploy a trained model container to an IoT Edge device.
 Confirm that you have completed lab: [lab-0](../../lab-0/visual-studio-code-setup) for Visual Studio Code before you begin.
 
 ## Exercise 1 - Get oriented to the lab files
-1. On your local computer expand the folder `06_deploy_to_iot_edge`.
+1. On your local computer expand the folder `starter-artifacts/visual-studio-code/06_deploy_to_iot_edge`.
 2. To run a lab, start Visual Studio Code and open the folder: `06_deploy_to_iot_edge` and select the starting notebook file: `06_deploy_to_iot_edge.ipynb`.
 3. Confirm that your have setup `azure_automl` as your interpreter.
 4. `06_deploy_to_iot_edge.ipynb` is the notebook file you will step thru executing in this lab.

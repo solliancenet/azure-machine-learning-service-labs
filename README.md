@@ -8,5 +8,5 @@ The following labs are available:
 - [Lab 2:](./lab-2/README.md) Use the capabilities of the Azure Machine Learning service to collect model performance metrics and to capture model version, as well as query the experimentation run history to retrieve captured metrics.
 - [Lab 3:](./lab-3/README.md) Deploying a trained model to containers using an Azure Container Instance and Azure Kubernetes Service using Azure Machine Learning.
 - [Lab 4:](./lab-4/README.md) Using the automated machine learning (AutoML) capabilities within the Azure Machine Learning service to automatically train multiple models with varying algorithms and hyperparameters and then select the best performing model.
-- [Lab 5:](./lab-5/README.md)  Training deep learning models built with Keras and a Tensorflow backend that utilize GPUs with the Azure Machine Learning compute.
-- [Lab 6:](./lab-6/README.md) Deploy a trained model container to an IoT Edge device via the Azure Machine Learning service.
+- [Lab 5:](./lab-5/README.md) Training deep learning models built with Keras and a TensorFlow backend that utilize GPU optimized Azure Machine Learning compute cluster.
+- [Lab 6:](./lab-6/README.md) Learn how Azure Machine Learning service  can be used to Provision an IoT Hub and an IoT Edge Device and then deploy a trained anomaly detection model to the IoT Edge device to make real-time inferences.

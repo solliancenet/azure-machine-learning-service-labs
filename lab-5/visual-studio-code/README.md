@@ -6,7 +6,7 @@ In this lab you train deep learning models built with Keras and a Tensorflow bac
 Confirm that you have completed lab: [lab-0](../../lab-0/visual-studio-code-setup) for Visual Studio Code before you begin.
 
 ## Exercise 1 - Get oriented to the lab files
-1. On your local computer expand the folder `05-deep-learning`.
+1. On your local computer expand the folder `starter-artifacts/visual-studio-code/05-deep-learning`.
 2. To run a lab, start Visual Studio Code and open the folder: `05-deep-learning` and select the starting notebook file: `05_deep_learning.ipynb`.
 3. Confirm that your have setup `azure_automl` as your interpreter.
 4. `05_deep_learning.ipynb` is the notebook file you will step thru executing in this lab.
